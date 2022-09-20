@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "1ab69ab1ed4b44b1",
+        "id": "8e4f00daafa1bbd3",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -125,11 +125,12 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
-  "active": "c455cf8057b1f3a9",
+  "active": "8e4f00daafa1bbd3",
   "lastOpenFiles": [
-    "2022-09-13.md",
-    "STUDY/JAVA/1.자바.md"
+    "STUDY/JAVA/1.자바.md",
+    "2022-09-13.md"
   ]
 }
