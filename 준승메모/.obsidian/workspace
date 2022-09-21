@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "STUDY/JAVA/1.자바.md",
+            "file": "STUDY/GIT/99. 자주 사용하는 명령어.md",
             "mode": "source",
             "source": false
           }
@@ -77,7 +77,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "STUDY/JAVA/1.자바.md",
+                "file": "STUDY/GIT/99. 자주 사용하는 명령어.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -94,7 +94,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "STUDY/JAVA/1.자바.md",
+                "file": "STUDY/GIT/99. 자주 사용하는 명령어.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "STUDY/JAVA/1.자바.md"
+                "file": "STUDY/GIT/99. 자주 사용하는 명령어.md"
               }
             }
           }
@@ -130,7 +130,10 @@
   },
   "active": "8e4f00daafa1bbd3",
   "lastOpenFiles": [
-    "STUDY/JAVA/1.자바.md",
+    "STUDY/JAVA/1. 자바.md",
+    "STUDY/GIT/99. 자주 사용하는 명령어.md",
+    "STUDY/JAVA/2. 객체지향 프로그래밍.md",
+    "옵시디언 관련 메모.md",
     "2022-09-13.md"
   ]
 }
