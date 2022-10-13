@@ -59,4 +59,7 @@ public class 자식클래스 extends 부모클래스1, 부모클래스2 { // 에
 - 비중이 높은 클래스만 상속, 나머지는 포함
 
 ## 5. Object클래스 - 모든 클래스의 조상
-- 부모가 없는 
+- 부모가 없는 클래스는 자동적으로 Object클래스 상속 받음
+	- Object클래스는 모든 클래스의 최고 조상
+- 모든 클래스는 Object클래스에 정의된 11개의 메소드 상속 받음
+	- ex) toString(), equals(object obj) 등
