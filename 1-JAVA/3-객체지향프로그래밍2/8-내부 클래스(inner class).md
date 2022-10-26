@@ -111,13 +111,13 @@ run
 
 ## 3. 내부 클래스의 선언
 ```java
-class ABC { // 외부 클래스
-	class In { // 인스턴스 내부 클래스
-		static class Sin { // 정적 내부 클래스
-		}
+class OutClass { // 외부 클래스
+	class InClass { // 인스턴스 내부 클래스
 	}
-	public void abc() { 
-		class Local { // 지역 내부 클래스
+	static class StaticInClass { // 정적 내부 클래스
+	}
+	public void method() { 
+		class LocalInClass{ // 지역 내부 클래스
 		}
 	}
 }
@@ -126,7 +126,77 @@ class ABC { // 외부 클래스
 ## 4. 내부 클래스의 제어자와 접근성
 - 내부 클래스의 제어자는 변수에 사용 가능한 제어자와 동일(참고 : [[4-제어자(modifier)#6. 제어자(modifier)의 조합]])
 	-  클래스는 default, public만 가능하지만 내부 클래스에는 모든 접근 제어자가 가능
-- 
+```java
+class OutClass { // 외부 클래스
+	private int privateIv = 11;
+	static int staticIv = 22;
+	int value = 100;
+	
+	class InClass { // 인스턴스 내부 클래스
+		int iv = 10;
+		// static int cv = 20; // 에러 인스턴스 내부 클래스에서는 static 변수를 선언할 수 없음
+		final static int CONST = 30; // 상수이므로 허용
+		int value = 200;
+
+		int v1 = privateIv; // 내부 클래스는 외부 클래스 private 변수 접근 가능
+		int v2 = staticIv; // static 변수 사용 가능
+
+		void method(){
+			int value = 300;
+			System.out.println(value); // 300
+			System.out.println(this.value); // 200
+			System.out.println(OutClass.this.value); // 100
+		}
+	}
+	
+	static class StaticInClass { // 정적 내부 클래스
+		int iv = 100;
+		static int cv = 200; // static 내부 클래만 static 변수 선언 가능
+		
+		// int v1 = privateIv; // 인스턴스 변수 접근 불가
+		int v2 = staticIv; // static 변수 사용 가능
+	}
+	
+	public void method() { 
+		int lv = 10;
+		
+		class LocalInClass{ // 지역 내부 클래스
+			int iv = 1000;
+			// static int cv = 2000; // 에러 인스턴스 내부 클래스에서는 static 변수를 선언할 수 없음
+			final static int CONST = 3000; // 상수이므로 허용
+
+			int v1 = privateIv; // 내부 클래스는 외부 클래스 private 변수 접근 가능
+			int v2 = staticIv; // static 변수 사용 가능
+			int v3 = lv; // JDK1.8부터 가능 자동적으로 상수 처리
+			/*
+			메서드 변수는 메서드 종료와 함께 소멸
+			지역 내부 클래스의 객체는 메서드 변수보다 오래 존재할 가능성이 있어 값이 변하지 않는 상수로 처리
+			*/
+		}
+	}
+
+	/* 메서드 접근 */
+	static void staticMethod() { // static 메서드에서는 static멤버만 가능
+		// InClass ic = new InClass(); 
+		StaticInClass sic = new StaticInClass();
+		// LocalInClass lc = new LocalInClass(); 지역 내부 클래스는 접근 불가
+	}
+	
+	void instanceMethod() { // 인스턴스 메서드에서는 둘 다 가능
+		InClass ic = new InClass();
+		StaticInClass sic = new StaticInClass();
+		// LocalInClass lc = new LocalInClass(); 지역 내부 클래스는 접근 불가
+	}
+
+	
+}
+
+...
+System.out.println(InClass.CONST); // 30;
+System.out.println(StaticInClass.cv); //  200;
+// System.out.println(LocalInClass.CONST); // 지역 내부 클래스 상수는 접근 불가, 메서드에서만 사용
+
+```
 
 ## 5. 익명 클래스(anonymous class)
 
