@@ -199,4 +199,18 @@ System.out.println(StaticInClass.cv); //  200;
 ```
 
 ## 5. 익명 클래스(anonymous class)
-
+- 이름이 없고 정의와 생성을 동시에 하는 일회용 클래스
+- 주로 자바 UI에서 이벤트 처리 시 사용
+- 안드로이드 프로그래밍에서 위젯 이벤트 처리 핸들러 구현 시 사용
+```java
+class Outer {
+	Runnable runner() {
+		return new Runnable() { // 상위 클래스 이름 또는 구현 인터페이스명을 씀
+			@Override
+			public void run() { // 무조건 run() 메서드 오버라이딩 해야함  
+				System.out.println("run");  
+			}  
+		}
+	}; // 끝에 ;씀
+}
+```
